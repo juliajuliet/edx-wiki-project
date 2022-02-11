@@ -26,8 +26,8 @@ def entry(request, entry):
             "title": entry
     })
     else:
-        return render(request, "encyclopedia/entry.html", {
-            "error": f"Sorry, there's no {entry} page. Try again, please"
+        return render(request, "encyclopedia/notExistingPage.html", {
+            "message": f"Sorry, there's no {entry} page. Try again, please"
         })
 
 def search(request):
@@ -73,7 +73,6 @@ def newPage(request):
             'exist': False
         })
 
-#found the idea here https://github.com/EgidioHPaixao/web50-projects-2020-x-wiki
 def edit(request, entry):
     mdPage = util.get_entry(entry)
     if mdPage:
