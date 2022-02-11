@@ -73,6 +73,7 @@ def newPage(request):
             'exist': False
         })
 
+#found the idea here https://github.com/EgidioHPaixao/web50-projects-2020-x-wiki
 def edit(request, entry):
     mdPage = util.get_entry(entry)
     if mdPage:
